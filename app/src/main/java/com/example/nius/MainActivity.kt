@@ -33,9 +33,9 @@ class MainActivity : ComponentActivity() {
                            .fillMaxSize()
                    ){
                        Text(
-                           text = "Githeri Media",
+                           text = "Abeloh World News",
                            modifier = Modifier.align(Alignment.CenterHorizontally),
-                           color = Color.Red,
+                           color = Color.Blue,
                            fontSize = 25.sp,
                            fontFamily = FontFamily.Serif
 
