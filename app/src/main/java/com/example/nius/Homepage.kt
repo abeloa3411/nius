@@ -37,11 +37,12 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import coil3.compose.AsyncImage
 import com.kwabenaberko.newsapilib.models.Article
 
 @Composable
-fun Homepage(NewViewModel: NewsViewModek) {
+fun Homepage(NewViewModel: NewsViewModek, navController: NavHostController) {
 
     val articles by NewViewModel.articles.observeAsState(emptyList())
 
@@ -55,7 +56,7 @@ fun Homepage(NewViewModel: NewsViewModek) {
             modifier = Modifier.fillMaxSize()
         ){
             items(articles){article->
-               ArticleItem(article)
+               ArticleItem(article, navController)
 
             }
         }
@@ -63,10 +64,53 @@ fun Homepage(NewViewModel: NewsViewModek) {
 
 }
 @Composable
-fun ArticleItem(article: Article){
+fun ArticleItem(article: Article, navController: NavHostController){
     Card(
         modifier = Modifier.padding(8.dp),
-        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
+        onClick = {
+            navController.navigate(Articlescreen)
+        }
 
     ) {
         Row (

@@ -15,6 +15,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.nius.ui.theme.NiusTheme
 
 class MainActivity : ComponentActivity() {
@@ -25,6 +28,9 @@ class MainActivity : ComponentActivity() {
         val NewViewModel = ViewModelProvider(this)[NewsViewModek::class.java]
 
         setContent {
+
+            val navController = rememberNavController()
+
             NiusTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                    Column (
@@ -41,7 +47,18 @@ class MainActivity : ComponentActivity() {
 
                            )
 
-                       Homepage(NewViewModel)
+                       NavHost(navController = navController, startDestination = Homescreen) {
+                           composable<Homescreen> {
+                               Homepage(NewViewModel,navController)
+                           }
+
+                           composable<Articlescreen> {
+                               ArticlePage()
+                           }
+
+                       }
+
+
 
                    }
 

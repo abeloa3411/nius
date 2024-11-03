@@ -78,5 +78,5 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment:2.8.3")
     implementation("androidx.navigation:navigation-ui:2.8.3")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
 }
